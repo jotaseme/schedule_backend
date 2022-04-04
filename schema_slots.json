@@ -1,0 +1,81 @@
+[
+  {
+    "type": "MEAL|TRAINING",
+    "startAt": "2015-05-28T09:00:00-07:00",
+    "endAt": "2015-05-28T09:00:00-07:00",
+    "slots": [
+      {
+        "day": "M|T|W|TH|F|S|SU",
+        "event": "MEAL1|MEAL2|MEAL3|MEAL4|MEAL5|MEAL6|MEAL7",
+        "startAt": "2015-05-28T09:00:00-07:00",
+        "endAt": "2015-05-28T09:00:00-07:00"
+      },
+      {
+        "day": "M|T|W|TH|F|S|SU",
+        "event": "MEAL1|MEAL2|MEAL3|MEAL4|MEAL5|MEAL6|MEAL7",
+        "startAt": "2015-05-28T09:00:00-07:00",
+        "endAt": "2015-05-28T09:00:00-07:00"
+      }
+    ],
+    "exclude": {
+      "day": "M|T|W|TH|F|S|SU",
+      "event": "MEAL1|MEAL2|MEAL3|MEAL4|MEAL5|MEAL6|MEAL7"
+    }
+  },
+  {
+    "type": "MEAL",
+    "items": [
+      {
+        "event": "MEAL1",
+        "startAt": "07:30",
+        "endAt": "08:00"
+      },
+      {
+        "event": "MEAL2",
+        "startAt": "11:30",
+        "endAt": "12:00"
+      },
+      {
+        "event": "MEAL3",
+        "startAt": "15:00",
+        "endAt": "15:30"
+      },
+      {
+        "event": "MEAL4",
+        "startAt": "18:00",
+        "endAt": "18:30"
+      },
+      {
+        "event": "MEAL5",
+        "startAt": "21:30",
+        "endAt": "22:00",
+        "exclude": "Friday"
+      }
+    ]
+  },
+  {
+    "type": "TRAINING",
+    "items": [
+      {
+        "day": "Monday",
+        "startAt": "18:30",
+        "endAt": "20:00"
+      },
+      {
+        "day": "Wednesday",
+        "startAt": "18:30",
+        "endAt": "20:00"
+      },
+      {
+        "day": "Friday",
+        "startAt": "18:30",
+        "endAt": "20:00"
+      },
+      {
+        "day": "Saturday",
+        "startAt": "12:30",
+        "endAt": "14:00"
+      }
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+services:
+  League\Tactician\CommandBus $commandBus: '@tactician.commandbus.default'
+
+  # CommandHandler
+  app.slots.create_handler:
+    class: App\Infrastructure\CommandBus\Schedule\CreateSlotsHandler
+    arguments:
+      - '@App\Application\UseCase\CreateSlotsUseCase'
+    tags:
+      - { name: tactician.handler, command: App\Infrastructure\CommandBus\Schedule\CreateSlotsCommand }
+
+
+  app.blocks.create_handler:
+    class: App\Infrastructure\CommandBus\Schedule\CreateBlocksHandler
+    arguments:
+      - '@App\Application\UseCase\CreateBlocksUseCase'
+    tags:
+      - { name: tactician.handler, command: App\Infrastructure\CommandBus\Schedule\CreateBlocksCommand }
+
+  app.blocks.get_handler:
+    class: App\Infrastructure\CommandBus\Schedule\GetBlocksHandler
+    arguments:
+      - '@App\Application\UseCase\GetBlocksUseCase'
+    tags:
+      - { name: tactician.handler, command: App\Infrastructure\CommandBus\Schedule\GetBlocksCommand }

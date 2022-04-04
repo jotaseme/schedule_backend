@@ -1,0 +1,20 @@
+<doctrine-mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                   https://raw.github.com/doctrine/doctrine2/master/doctrine-mapping.xsd">
+    <entity name="App\Domain\Schedule\Slot" table="slot" inheritance-type="JOINED">
+        <discriminator-column name="discr" type="string"/>
+        <discriminator-map>
+            <discriminator-mapping value="slot_meal" class="App\Domain\Schedule\SlotMeal"/>
+            <discriminator-mapping value="slot_training" class="App\Domain\Schedule\SlotTraining"/>
+        </discriminator-map>
+        <id name="id" type="integer" column="id">
+            <generator strategy="AUTO"/>
+        </id>
+        <field name="startAt" type="time" column="start_at" unique="false"/>
+        <field name="endAt" type="time" column="end_at" unique="false"/>
+        <many-to-one field="user" target-entity="App\Domain\Schedule\User">
+            <join-column name="user_id" nullable="false" referenced-column-name="id"/>
+        </many-to-one>
+    </entity>
+</doctrine-mapping>

@@ -1,0 +1,6 @@
+#API REST
+rest_v1:
+  type: annotation
+  resource: ../../src/Infrastructure/Controller/
+  prefix: /v1
+
